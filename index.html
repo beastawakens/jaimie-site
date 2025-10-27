@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Study - Participant Information</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: white;
+        color: #2c3e50;
+        text-align: center;
+        padding: 3rem 2rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #667eea;
+      }
+
+      header p {
+        font-size: 1.2rem;
+        color: #666;
+      }
+
+      .image-section {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .image-section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .info-section {
+        background: white;
+        padding: 3rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .info-section > h2 {
+        color: #667eea;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #667eea;
+      }
+
+      .study-title {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        line-height: 1.6;
+      }
+
+      .content-block {
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        border-radius: 4px;
+      }
+
+      .content-block h3 {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .content-block h3::before {
+        content: "▶";
+        color: #667eea;
+        margin-right: 0.5rem;
+        font-size: 0.8em;
+      }
+
+      .content-block p,
+      .content-block ul {
+        color: #555;
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+      }
+
+      .content-block ul {
+        padding-left: 2rem;
+        list-style-type: disc;
+      }
+
+      .content-block li {
+        margin-bottom: 0.5rem;
+      }
+
+      .highlight-box {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+
+      .important-box {
+        background: #d1ecf1;
+        border-left: 4px solid #17a2b8;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 4px;
+      }
+
+      .contact-info {
+        background: #e7f3ff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+      }
+
+      .contact-info h4 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .contact-info p {
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-info a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      .pdf-link {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        font-weight: 600;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .pdf-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      }
+
+      .contact-section {
+        background: white;
+        padding: 3rem;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-section h2 {
+        color: #667eea;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #667eea;
+      }
+
+      .form-placeholder {
+        padding: 0;
+        background: transparent;
+        border-radius: 8px;
+        text-align: left;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .contact-form label {
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1.1rem;
+      }
+
+      .contact-form input[type="email"],
+      .contact-form textarea {
+        padding: 1rem;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+        background-color: #f8f9fa;
+      }
+
+      .contact-form input[type="email"]:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        background-color: white;
+      }
+
+      .contact-form textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .contact-form button[type="submit"] {
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        align-self: flex-start;
+      }
+
+      .contact-form button[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      }
+
+      .contact-form button[type="submit"]:active {
+        transform: translateY(0);
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem 0;
+        color: white;
+        margin-top: 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        header h1 {
+          font-size: 1.8rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        .info-section,
+        .contact-section {
+          padding: 1.5rem;
+        }
+
+        .content-block {
+          padding: 1rem;
+        }
+
+        .content-block h3 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Weight-Loss Group Research Study</h1>
+      <p>Participant Information & Contact</p>
+    </header>
+
+    <div class="container">
+      <!-- Image Section -->
+      <section class="image-section">
+        <img src="image-1.png" alt="Research Study" />
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="contact-section">
+        <h2>Contact Me to take part in the study</h2>
+        <div class="form-placeholder">
+          <form
+            action="https://formspree.io/f/mvgvzknd"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your experience or ask any questions..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Information Section -->
+      <section class="info-section">
+        <h2>Participant Information Sheet (PIS)</h2>
+
+        <div class="study-title">
+          <strong>Study Title:</strong> Tightening the Waist Band: Is better
+          regulation needed to reduce harmful practices of the diet industry?
+        </div>
+
+        <div class="content-block">
+          <h3>What is the purpose of the study?</h3>
+          <p>
+            My name is Jaimie, and I am a PhD student at the University of
+            Bristol. This research is part of my PhD thesis. The study examines
+            the experiences of women who use (or have used) weight-loss
+            programmes, focusing on how these programmes affect their
+            well-being, including their mental health, self-esteem, and
+            relationship with food.
+          </p>
+          <p>
+            Additionally, the study explores the rules and regulations
+            surrounding weight-loss programmes to understand whether these
+            programmes are operating in ways that protect their users. By
+            highlighting how these programmes work and their potential harms,
+            the research aims to provide recommendations to improve safety and
+            support for customers.
+          </p>
+          <div class="highlight-box">
+            <strong>Examples of harms include:</strong> feelings of guilt,
+            pressure to lose weight, or the impact of harmful advice given
+            during participation in these programmes.
+          </div>
+          <p>
+            This research seeks to shed light on how weight-loss programmes
+            operate in today's digital era, where online tools, apps, and
+            virtual support groups are increasingly shaping users' experiences.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>Why have I been chosen?</h3>
+          <p>
+            You have been invited because you are over 18, identify as a woman,
+            and have experience with one or more weight-loss programmes. Your
+            insights will provide important perspectives on the impact of these
+            programmes on people's health, well-being, and relationship with
+            food.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>Selection Process and Pre-Screening Questionnaire</h3>
+          <p>
+            This Participant Information Sheet has been sent alongside a
+            pre-screening questionnaire that you are invited to complete. The
+            pre-screening questionnaire will take approximately 10 minutes to
+            complete and will collect basic demographic and experiential
+            information.
+          </p>
+          <div class="important-box">
+            <strong>Please note:</strong> Receiving this Participant Information
+            Sheet does not guarantee participation in the interview phase of the
+            study. The pre-screening questionnaire is used to help narrow down
+            participants to ensure diversity and relevance to the research.
+          </div>
+          <p>
+            If you are selected to participate, you will be contacted within two
+            weeks of submitting the pre-screening questionnaire to schedule your
+            interview. If you are not selected, you will also be informed via
+            email during this period.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>What will happen if I take part?</h3>
+          <p>
+            If you agree to participate, you will take part in a semi-structured
+            interview lasting 60–90 minutes. The interview can be conducted
+            online or at a time and location that suits you. The discussion will
+            be recorded to ensure accuracy.
+          </p>
+          <p>
+            You will receive a Participant Information Sheet (this document) and
+            be asked to review it and sign a consent form before the interview.
+          </p>
+          <p>
+            After the interview, you will have the opportunity to review your
+            transcript to ensure it accurately reflects your responses. If
+            requested, you will receive a copy of your interview transcript via
+            a password-protected file sent to your email within two weeks of
+            your interview.
+          </p>
+          <p>
+            You will then have two weeks to review the transcript before
+            analysis begins and provide any comments, corrections, or
+            clarifications. If you do not respond within this timeframe, it will
+            be assumed that you are satisfied with the content.
+          </p>
+          <div class="highlight-box">
+            <strong>Secure Data Transfer:</strong> The transcript will be sent
+            as a password-protected PDF file to the email address you provided
+            during the consent process. A separate email containing the password
+            will be sent to you for security. Your data will be handled in
+            accordance with the University of Bristol's data protection
+            policies, ensuring confidentiality at all times.
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>What will I be asked about?</h3>
+          <p>
+            During the interview, you will be asked about the following topics:
+          </p>
+          <ul>
+            <li>
+              Your reasons for joining a weight-loss programme and the type of
+              programme you used
+            </li>
+            <li>
+              How the programme impacted your physical health, mental health,
+              and social well-being
+            </li>
+            <li>
+              Your views on the advice and guidance provided by the programme
+              (e.g., whether it felt safe or supportive)
+            </li>
+            <li>
+              Whether you think the programme prioritised customer safety or its
+              business interests
+            </li>
+            <li>
+              Your perspectives on whether the programme followed appropriate
+              rules or regulations, and whether there are gaps in consumer
+              protection
+            </li>
+          </ul>
+          <p>
+            You are welcome to skip any questions you do not wish to answer.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>What will happen if I don't take part?</h3>
+          <p>
+            Participation is entirely voluntary. Choosing not to take part will
+            have no impact on your access to services or your relationship with
+            the researcher or their institution.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>Anonymisation</h3>
+          <p>
+            Your responses will be anonymised, and identifying information
+            (e.g., your name, location) will be removed. You will be referred to
+            in research outputs using a pseudonym.
+          </p>
+          <div class="important-box">
+            <strong>Limits of confidentiality:</strong> While every effort will
+            be made to protect your identity, absolute confidentiality cannot be
+            guaranteed if contextual information inadvertently links back to
+            you. Additionally, confidentiality may need to be breached if you
+            disclose information that suggests significant harm to yourself or
+            others. In such cases, appropriate authorities or support services
+            may be informed, and you will be made aware of this process.
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>What will my information be used for?</h3>
+          <p>
+            Your anonymised data will be used for my PhD thesis and may appear
+            in academic publications or presentations. The data will also be
+            preserved and made available for future research through open-access
+            repositories.
+          </p>
+          <p>
+            Additionally, the findings may be shared more widely through blogs,
+            articles, or other media platforms to ensure the research reaches a
+            broader audience. Participants will be fully informed of this during
+            the consent process and will have the opportunity to ask questions
+            and provide explicit written consent for the sharing of their
+            anonymised data.
+          </p>
+          <p>
+            As a way of thanking participants for their time and contribution, a
+            user-friendly summary of the study's findings will be created and
+            shared with those who express interest. This summary will provide
+            key insights from the research in an accessible format without
+            overwhelming participants with the full academic thesis.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>
+            What anonymised data will be available for future use by
+            researchers?
+          </h3>
+          <p>
+            Anonymised data from this study will be preserved and made available
+            for future research in a secure, open-access repository. This
+            ensures that the findings can contribute to further research while
+            maintaining participant confidentiality.
+          </p>
+        </div>
+
+        <div class="content-block">
+          <h3>Right to erasure</h3>
+          <p>
+            You have the right to withdraw your participation or request the
+            deletion of your data at any time within two weeks of receiving your
+            transcript for review, before analysis begins. After this point,
+            your anonymised data may be included in the analysis and cannot be
+            removed.
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <h4>Further Contact Details</h4>
+          <p>
+            <strong>For general enquiries about the study:</strong><br />
+            Jaimie O'Connor at
+            <a href="mailto:df18670@bristol.ac.uk">df18670@bristol.ac.uk</a>
+          </p>
+          <p>
+            <strong>For complaints about the research practice:</strong><br />
+            Jo Large at
+            <a href="mailto:jo.large@bristol.ac.uk">jo.large@bristol.ac.uk</a
+            ><br />
+            Zoi Toumpakari at
+            <a href="mailto:zoi.toumpakari@bristol.ac.uk"
+              >zoi.toumpakari@bristol.ac.uk</a
+            >
+          </p>
+        </div>
+
+        <div class="cta-button">
+          <a href="Particpant.pdf" class="pdf-link" target="_blank"
+            >📄 Download Full PDF Document</a
+          >
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 University of Bristol. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
