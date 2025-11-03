@@ -246,6 +246,9 @@
           box-shadow 0.3s;
         background-color: #f8f9fa;
       }
+      .contact-form input[name="_gotcha"] {
+        display: none;
+      }
 
       .contact-form input[type="email"]:focus,
       .contact-form textarea:focus {
@@ -354,6 +357,7 @@
                 placeholder="your.email@example.com"
                 required
               />
+              <input type="text" name="_gotcha" />
             </div>
             <div class="form-group">
               <label for="message">Your Message</label>
